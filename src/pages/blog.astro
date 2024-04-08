@@ -5,6 +5,7 @@ import "../styles/global.css"
 import Navigation from '../components/Navigation.astro';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = 'My Blog';
 ---
@@ -18,12 +19,7 @@ const pageTitle = 'My Blog';
     <title>{pageTitle}</title>
 </head>
 <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <Footer />
-    <script>
-        import "../scripts/menu.js"
-    </script>
+    <BaseLayout pageTitle={pageTitle} />
 </body>
 </html>
 <style>
