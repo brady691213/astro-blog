@@ -10,6 +10,5 @@ alt: 'The full Astro logo.'
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# My First Blog Post
+Blah blah 1
 
-Blah blah
