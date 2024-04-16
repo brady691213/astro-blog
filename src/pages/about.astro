@@ -1,4 +1,5 @@
 ---
+import Navigation from "../components/Navigation.astro";
 const pageTitle = "About Me";
 
 const identity = {
@@ -6,7 +7,7 @@ const identity = {
     country: "Canada",
     occupation: "Technical Writer",
     hobbies: ["photography", "birdwatching", "baseball"],
-    };
+};
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
@@ -17,18 +18,22 @@ const goal = 3;
 const skillColor = "navy";
 const fontWeight = "bold"
 const textCase = "all-caps"
+
+import '../styles/global.css';
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>{pageTitle}</title>
     <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {
             color: purple;
             font-size: 4rem;
         }
+
         .skill {
             color: var(--skillColor);
             font-weight: var(--fontWeight);
@@ -37,13 +42,12 @@ const textCase = "all-caps"
     </style>
 </head>
 <body>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+<Navigation/>
 <h1>{pageTitle}</h1>
 <h2>... and my new Astro site!</h2>
 
-<p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+<p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I
+    built myself!</p>
 
 <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
 
@@ -57,7 +61,9 @@ const textCase = "all-caps"
 </ul>
 <p>My skills are:</p>
 <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
+    {skills.map((skill) =>
+            <li class="skill">{skill}</li>)}
 </ul>
+<Footer/>
 </body>
 </html>
